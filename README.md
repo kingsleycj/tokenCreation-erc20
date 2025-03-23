@@ -10,9 +10,11 @@ This project is an ERC-20 token implementation using Solidity and Hardhat. The t
 - **Verified Contract on Etherscan:** [View Contract](https://sepolia.basescan.org/address/0x3856B1C711cA4a919bFE56064228AF1fCc02e210#code)
 
 ## Features
-- Implements ERC-20 standard
+- Implements the ERC-20 standard token interface
 - Mintable by the owner
 - Ownable contract structure
+- 18 decimal places (standard for ERC-20 tokens)
+- Initial supply of 1,000,000 eNGN tokens
 
 ## Token Functionality
 ### **Minting Tokens**
@@ -25,6 +27,22 @@ function mint(address to, uint256 amount) public onlyOwner {
 - Only the **owner** of the contract can call this function.
 - New tokens are created and sent to the specified `to` address.
 
+### **Initial Minting**
+
+During contract deployment, 1,000,000 eNGN tokens are minted and assigned to the deployer:
+
+```solidity
+constructor(address initialOwner) 
+    ERC20("eNaira", "eNGN") 
+    Ownable(initialOwner)
+{
+    _mint(msg.sender, 1000000 * 10 ** decimals());
+}
+```
+
+- The contract sets the deployer as the initial owner.
+- A total of 1,000,000 tokens are minted at deployment.
+
 
 ## Installation and Setup
 To use or modify this project, follow these steps:
@@ -33,7 +51,8 @@ To use or modify this project, follow these steps:
 Ensure you have the following installed:
 - [Node.js](https://nodejs.org/)
 - [Hardhat](https://hardhat.org/)
-- npm
+- [npm](https://npmjs.com/)
+- [Metamask](https://metamask.io/)
 
 ### Clone the Repository
 ```sh
@@ -69,6 +88,41 @@ npx hardhat run scripts/deploy.js --network baseSepolia
 npx hardhat verify --network baseSepolia 0x3856B1C711cA4a919bFE56064228AF1fCc02e210 <owner_address>
 ```
 
+## Interacting with the Token
+You can interact with the token using:
+
+### MetaMask
+
+1. Add the token to your MetaMask wallet:
+2. Click "Import tokens"
+3. Enter the contract address: 0x3856B1C711cA4a919bFE56064228AF1fCc02e210
+4. Symbol: eNGN
+5. Decimals: 18
+
+
+After inserting the Contract address, other parameters are automatically filled anyway.
+
+## Project Structure
+
+```
+Erc20TokenProject/
+│── contracts/ 
+│   ├── eNaira.sol         
+│── scripts/ 
+│   ├── deploy.js            
+│── screenshots/         
+│   ├── Completion.png
+│   ├── deployment.png
+│   ├── importing token.png
+│   ├── sending token.png
+│   ├── Txn details.png
+│   ├── verification.png
+│── .gitignore
+│── hardhat.config.js   
+│── package.json        
+│── README.md            
+
+```
 ## Screenshots
 
 ### Development phase
