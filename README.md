@@ -73,20 +73,25 @@ npx hardhat verify --network baseSepolia 0x3856B1C711cA4a919bFE56064228AF1fCc02e
 
 ### Development phase
  > Deployment 
- ![deployment](<deployment.png>)
+ ![deployment](<screenshots/deployment.png>)
 
 
 > Verification 
-![verification](<verification.png>)
+![verification](<screenshots/verification.png>)
 
 > Transaction Details
-![Txn Details](<Txn details.png>)
+![Txn Details](<screenshots/Txn details.png>)
+
+
+### Importing token
+> Importing
+![importing](<screenshots/importing token.png>)
 
 ### Sending Tests
 
 > Sending test
-![Sending](<sending token.png>)
+![Sending](<screenshots/sending token.png>)
 
 
 > Confirmation
-![Confirmation](<Completion.png>)
+![Confirmation](<screenshots/Completion.png>)
