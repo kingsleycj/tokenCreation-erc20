@@ -95,7 +95,7 @@ You can interact with the token using:
 
 1. Add the token to your MetaMask wallet:
 2. Click "Import tokens"
-3. Enter the contract address: 0x3856B1C711cA4a919bFE56064228AF1fCc02e210
+3. Enter the contract address: `0x3856B1C711cA4a919bFE56064228AF1fCc02e210`
 4. Symbol: eNGN
 5. Decimals: 18
 
