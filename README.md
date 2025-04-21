@@ -85,7 +85,7 @@ npx hardhat run scripts/deploy.js --network baseSepolia
 
 ### Verify the Contract
 ```sh
-npx hardhat verify --network baseSepolia 0x3856B1C711cA4a919bFE56064228AF1fCc02e210 <owner_address>
+npx hardhat verify --network baseSepolia <contract-address> <owner_address>
 ```
 
 ## Interacting with the Token
